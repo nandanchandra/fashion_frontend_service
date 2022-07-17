@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 import ImageHelper from "./helper/imageHelper";
-import { addItemToCart } from "./helper/cartHelper";
+import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 const isAuthenticated = true;
 
 const Card = ({ product, addtocart = true, removeFromCart = false }) => {
@@ -43,11 +43,12 @@ const Card = ({ product, addtocart = true, removeFromCart = false }) => {
 			removeFromCart && (
 				<button
 					onClick={() => {
+						removeItemFromCart(product.id);
 						console.log("Removed From Cart");
 					}}
 					className="btn btn-block btn-outline-danger mt-2 mb-2"
 				>
-					Removed From Cart
+					Remove From Cart
 				</button>
 			)
 		);
