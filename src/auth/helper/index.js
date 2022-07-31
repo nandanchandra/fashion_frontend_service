@@ -22,9 +22,9 @@ export const signIn = (user) => {
 		formData.append(name, user[name]);
 	}
 
-	return fetch(`${API}user/login`, {
+	return fetch(`${API}user/login/`, {
 		method: "POST",
-		body: FormData,
+		body: formData,
 	})
 		.then((response) => {
 			return response.json();
