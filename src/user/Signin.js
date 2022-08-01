@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Base from "../core/Base";
 import { authenticate, isAuthenticated, signIn } from "../auth/helper/index";
 
 const Signin = () => {
-	let navigate = useNavigate();
-
 	const [values, setValues] = useState({
 		email: "",
 		password: "",
@@ -51,7 +49,7 @@ const Signin = () => {
 
 	const performRedirect = () => {
 		if (isAuthenticated()) {
-			return navigate("/");
+			return <Redirect to="/" />;
 		}
 	};
 

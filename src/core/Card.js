@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import ImageHelper from "./helper/imageHelper";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
@@ -21,7 +21,7 @@ const Card = ({ product, addtocart = true, removeFromCart = false }) => {
 
 	const getRedirect = (redirect) => {
 		if (redirect) {
-			<Navigate to="/cart" />;
+			return <Redirect to="/cart" />;
 		}
 	};
 

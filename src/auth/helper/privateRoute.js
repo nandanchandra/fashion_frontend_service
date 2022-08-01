@@ -1,17 +1,17 @@
 import React from "react";
-import { Routes, Navigate } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 import { isAuthenticated } from "./index";
 
 const PrivateRoutes = ({ component: Component, ...rest }) => {
 	return (
-		<Routes
+		<Route
 			{...rest}
 			render={(props) =>
 				isAuthenticated() ? (
 					<Component {...props} />
 				) : (
-					<Navigate
+					<Redirect
 						to={{
 							pathname: "/signin",
 							state: { from: props.location },
