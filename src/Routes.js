@@ -10,7 +10,7 @@ import userDashboard from "./user/userDashboard";
 
 const Routes = () => {
 	return (
-		<BrowserRouter>
+		<BrowserRouter forceRefresh={true}>
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/signup" exact component={Signup} />

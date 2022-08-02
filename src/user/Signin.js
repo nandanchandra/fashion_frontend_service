@@ -33,14 +33,12 @@ const Signin = () => {
 					});
 					setValues({
 						...values,
-						loading: true,
 						didRedirect: true,
 					});
 				} else {
 					setValues({
 						...values,
 						loading: false,
-						didRedirect: true,
 					});
 				}
 			})
@@ -132,10 +130,14 @@ const Signin = () => {
 			description="Hello User Please Enter your signin details"
 		>
 			{loadingMessage()}
+
 			{successMessage()}
 			{errorMessage()}
+
 			{signInForm()}
+
 			<p className="text-white text-center">{JSON.stringify(values)}</p>
+
 			{performRedirect()}
 		</Base>
 	);

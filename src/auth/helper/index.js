@@ -51,10 +51,10 @@ export const isAuthenticated = () => {
 };
 
 export const signOut = (next) => {
+	const userId = isAuthenticated() && isAuthenticated().user.id;
 	if (typeof window !== undefined) {
 		localStorage.removeItem("auth");
 		cartEmpty(() => {});
-		const userId = "";
 		return fetch(`${API}user/logout/${userId}`, {
 			method: "GET",
 		})
