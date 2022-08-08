@@ -22,7 +22,6 @@ const Signin = () => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		setValues({ ...values, error: false, loading: true });
-
 		signIn({ email, password })
 			.then((data) => {
 				console.log("DATA", data);
@@ -35,6 +34,7 @@ const Signin = () => {
 						...values,
 						didRedirect: true,
 					});
+					performRedirect();
 				} else {
 					setValues({
 						...values,

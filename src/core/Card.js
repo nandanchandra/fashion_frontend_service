@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 
 import ImageHelper from "./helper/imageHelper";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
+
 const isAuthenticated = true;
 
 const Card = ({ product, addtocart = true, removeFromCart = false }) => {

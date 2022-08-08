@@ -62,7 +62,7 @@ const Menu = ({ history, path }) => {
 						</li>
 					</Fragment>
 				)}
-				{isAuthenticated && (
+				{isAuthenticated() && (
 					<Fragment>
 						<li className="nav-item">
 							<span
