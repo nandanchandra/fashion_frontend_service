@@ -26,15 +26,13 @@ const Signin = () => {
 			.then((data) => {
 				console.log("DATA", data);
 				if (data.token) {
-					let sessionToken = data.token;
-					authenticate(sessionToken, () => {
+					authenticate(data, () => {
 						console.log("TOKEN ADDED");
+						setValues({
+							...values,
+							didRedirect: true,
+						});
 					});
-					setValues({
-						...values,
-						didRedirect: true,
-					});
-					performRedirect();
 				} else {
 					setValues({
 						...values,
@@ -46,7 +44,7 @@ const Signin = () => {
 	};
 
 	const performRedirect = () => {
-		if (isAuthenticated()) {
+		if (didRedirect && isAuthenticated()) {
 			return <Redirect to="/" />;
 		}
 	};
@@ -131,8 +129,8 @@ const Signin = () => {
 		>
 			{loadingMessage()}
 
-			{successMessage()}
-			{errorMessage()}
+			{/* {successMessage()} */}
+			{/* {errorMessage()} */}
 
 			{signInForm()}
 
