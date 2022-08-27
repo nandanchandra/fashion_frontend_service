@@ -20,7 +20,7 @@ const Cart = () => {
 						key={index}
 						product={product}
 						removeFromCart={true}
-						addtoCart={false}
+						addtocart={false}
 						reload={reload}
 						setReload={setReload}
 					/>
