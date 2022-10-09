@@ -134,8 +134,6 @@ const Signin = () => {
 
 			{signInForm()}
 
-			<p className="text-white text-center">{JSON.stringify(values)}</p>
-
 			{performRedirect()}
 		</Base>
 	);
